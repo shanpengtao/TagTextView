@@ -1,0 +1,28 @@
+//
+//  PrefixHeader.pch
+//  Demo
+//
+//  Created by shanpengtao on 15/10/29.
+//  Copyright © 2015年 shanpengtao. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "Utility.h"
+
+#define SCREENWIDTH  [UIScreen mainScreen].bounds.size.width
+#define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height
+#define isIPhoneX \
+([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+#define NAVBAR_DEFAULT_HEIGHT  ((isIPhoneX) ? 88 : 64)
+
+#endif
